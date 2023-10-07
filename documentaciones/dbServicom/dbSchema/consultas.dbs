@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="MariaDb" id="Project-215b" database="MariaDb" >
+	<schema name="support" >
+		<table name="clientes" row_count="22" spec="" >
+			<column name="id_clients" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="ci" type="INT" length="20" jt="4" />
+			<column name="apel" type="VARCHAR" length="50" jt="12" />
+			<column name="nom" type="VARCHAR" length="50" jt="12" />
+			<column name="tel" type="INT" length="20" jt="4" />
+			<column name="email" type="VARCHAR" length="100" jt="12" />
+			<column name="fec_nac" type="DATE" jt="91" />
+			<column name="fec_reg" type="DATETIME" jt="93" />
+			<column name="fec_modc" type="DATETIME" jt="93" />
+			<column name="estado" type="INT" length="20" jt="4" />
+			<index name="pk_clientes" unique="PRIMARY_KEY" >
+				<column name="id_clients" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="det_pago_rep" row_count="0" spec="" >
+			<column name="cant_rep" type="INT" length="11" jt="4" />
+			<column name="det_rep" type="TEXT" jt="-1" />
+			<column name="id_repuesto" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="id_pago_repuesto" type="INT" length="11" jt="4" mandatory="y" />
+			<index name="pk_det_pago_rep" unique="PRIMARY_KEY" >
+				<column name="id_repuesto" />
+				<column name="id_pago_repuesto" />
+			</index>
+			<index name="id_pago_repuesto" unique="NORMAL" >
+				<column name="id_pago_repuesto" />
+			</index>
+			<fk name="det_pago_rep_ibfk_1" to_schema="support" to_table="repuestos" options="" >
+				<fk_column name="id_repuesto" pk="id_rep" />
+			</fk>
+			<fk name="det_pago_rep_ibfk_2" to_schema="support" to_table="pago_rep" options="" >
+				<fk_column name="id_pago_repuesto" pk="id_p_rep" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="det_pago_servi" row_count="0" spec="" >
+			<column name="id_pag_serv" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="id_serv" type="INT" length="11" jt="4" mandatory="y" />
+			<column name="costo_servicio" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="detalle_servicio" type="TEXT" jt="-1" />
+			<index name="pk_det_pago_servi" unique="PRIMARY_KEY" >
+				<column name="id_serv" />
+				<column name="id_pag_serv" />
+			</index>
+			<index name="id_pag_serv" unique="NORMAL" >
+				<column name="id_pag_serv" />
+			</index>
+			<fk name="det_pago_servi_ibfk_1" to_schema="support" to_table="pago_servicio" options="" >
+				<fk_column name="id_pag_serv" pk="id_pago_servicio" />
+			</fk>
+			<fk name="det_pago_servi_ibfk_2" to_schema="support" to_table="servicios" options="" >
+				<fk_column name="id_serv" pk="id_serv" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="ing_equipos" row_count="38" spec="" >
+			<column name="id_ing" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="foto" type="VARCHAR" length="100" jt="12" />
+			<column name="desc" type="TEXT" jt="-1" />
+			<column name="garantia" type="VARCHAR" length="50" jt="12" />
+			<column name="mod_eq" type="VARCHAR" length="50" jt="12" />
+			<column name="fec_ing" type="DATETIME" jt="93" />
+			<column name="fec_sald" type="DATETIME" jt="93" />
+			<column name="estado" type="VARCHAR" length="20" jt="12" />
+			<column name="estado_eq" type="TEXT" jt="-1" />
+			<column name="id_cliente" type="INT" length="11" jt="4" />
+			<column name="id_usuario" type="INT" length="11" jt="4" />
+			<column name="id_marca" type="INT" length="11" jt="4" />
+			<column name="id_tipo_equipo" type="INT" length="11" jt="4" />
+			<index name="pk_ing_equipos" unique="PRIMARY_KEY" >
+				<column name="id_ing" />
+			</index>
+			<index name="id_cliente" unique="NORMAL" >
+				<column name="id_cliente" />
+			</index>
+			<index name="id_marca" unique="NORMAL" >
+				<column name="id_marca" />
+			</index>
+			<index name="id_tipo_equipo" unique="NORMAL" >
+				<column name="id_tipo_equipo" />
+			</index>
+			<index name="id_usuario" unique="NORMAL" >
+				<column name="id_usuario" />
+			</index>
+			<fk name="ing_equipos_ibfk_1" to_schema="support" to_table="clientes" options="" >
+				<fk_column name="id_cliente" pk="id_clients" />
+			</fk>
+			<fk name="ing_equipos_ibfk_2" to_schema="support" to_table="usuarios" options="" >
+				<fk_column name="id_usuario" pk="id_user" />
+			</fk>
+			<fk name="ing_equipos_ibfk_3" to_schema="support" to_table="marcas" options="" >
+				<fk_column name="id_marca" pk="id_marca" />
+			</fk>
+			<fk name="ing_equipos_ibfk_4" to_schema="support" to_table="tipo_eq" options="" >
+				<fk_column name="id_tipo_equipo" pk="id_t_eq" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="marcas" row_count="76" spec="" >
+			<column name="id_marca" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="marca" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_marcas" unique="PRIMARY_KEY" >
+				<column name="id_marca" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="pago_rep" row_count="0" spec="" >
+			<column name="id_p_rep" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="fec_vent" type="DATE" jt="91" />
+			<column name="total_mont" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="id_razon" type="INT" length="11" jt="4" />
+			<column name="id_ingreso" type="INT" length="11" jt="4" />
+			<index name="pk_pago_rep" unique="PRIMARY_KEY" >
+				<column name="id_p_rep" />
+			</index>
+			<index name="id_ingreso" unique="NORMAL" >
+				<column name="id_ingreso" />
+			</index>
+			<index name="id_razon" unique="NORMAL" >
+				<column name="id_razon" />
+			</index>
+			<fk name="pago_rep_ibfk_1" to_schema="support" to_table="raz_social" options="" >
+				<fk_column name="id_razon" pk="id_raz_social" />
+			</fk>
+			<fk name="pago_rep_ibfk_2" to_schema="support" to_table="ing_equipos" options="" >
+				<fk_column name="id_ingreso" pk="id_cliente" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="pago_servicio" row_count="0" spec="" >
+			<column name="id_pago_servicio" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="fec_reg" type="DATETIME" jt="93" />
+			<column name="totalPago" type="INT" length="11" jt="4" />
+			<column name="id_ingreso" type="INT" length="11" jt="4" />
+			<column name="id_razon" type="INT" length="11" jt="4" />
+			<index name="pk_pago_servicio" unique="PRIMARY_KEY" >
+				<column name="id_pago_servicio" />
+			</index>
+			<index name="id_ingreso" unique="NORMAL" >
+				<column name="id_ingreso" />
+			</index>
+			<index name="id_razon" unique="NORMAL" >
+				<column name="id_razon" />
+			</index>
+			<fk name="pago_servicio_ibfk_1" to_schema="support" to_table="ing_equipos" options="" >
+				<fk_column name="id_ingreso" pk="id_ing" />
+			</fk>
+			<fk name="pago_servicio_ibfk_2" to_schema="support" to_table="raz_social" options="" >
+				<fk_column name="id_razon" pk="id_raz_social" />
+			</fk>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="raz_social" row_count="0" spec="" >
+			<column name="id_raz_social" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="det_rep" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_raz_social" unique="PRIMARY_KEY" >
+				<column name="id_raz_social" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="repuestos" row_count="26" spec="" >
+			<column name="id_rep" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="desc" type="VARCHAR" length="100" jt="12" />
+			<column name="foto" type="VARCHAR" length="100" jt="12" />
+			<column name="cant" type="INT" length="5" jt="4" />
+			<column name="precio" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<column name="fec_ing" type="DATETIME" jt="93" />
+			<column name="estado" type="INT" length="5" jt="4" />
+			<index name="pk_repuestos" unique="PRIMARY_KEY" >
+				<column name="id_rep" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="servicios" row_count="20" spec="" >
+			<column name="id_serv" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="nomb_serv" type="VARCHAR" length="50" jt="12" />
+			<column name="precio_serv" type="DECIMAL" length="10" decimal="2" jt="3" />
+			<index name="pk_servicios" unique="PRIMARY_KEY" >
+				<column name="id_serv" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="tipo_eq" row_count="12" spec="" >
+			<column name="id_t_eq" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="t_eq" type="VARCHAR" length="50" jt="12" />
+			<index name="pk_tipo_eq" unique="PRIMARY_KEY" >
+				<column name="id_t_eq" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+		<table name="usuarios" row_count="13" spec="" >
+			<column name="id_user" type="INT" length="11" jt="4" mandatory="y" >
+				<identity><![CDATA[AUTO_INCREMENT]]></identity>
+			</column>
+			<column name="user" type="VARCHAR" length="100" jt="12" />
+			<column name="password" type="VARCHAR" length="200" jt="12" />
+			<column name="nom" type="VARCHAR" length="100" jt="12" />
+			<column name="apel" type="VARCHAR" length="100" jt="12" />
+			<column name="perfil" type="VARCHAR" length="50" jt="12" />
+			<column name="foto" type="VARCHAR" length="100" jt="12" />
+			<column name="tel" type="VARCHAR" length="8" jt="12" />
+			<column name="ult_login" type="DATETIME" jt="93" />
+			<column name="fec_reg" type="DATETIME" jt="93" />
+			<column name="estado" type="INT" length="20" jt="4" />
+			<index name="pk_usuarios" unique="PRIMARY_KEY" >
+				<column name="id_user" />
+			</index>
+			<options><![CDATA[ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci]]></options>
+		</table>
+	</schema>
+	<connector name="MariaDb" database="MariaDb" driver_class="org.mariadb.jdbc.Driver" driver_jar="mariadb-java-client-3.1.2.jar" driver_desc="Standard" host="localhost" port="3306" user="root" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-26e0" show_column_type="y" show_relation="columns" >
+		<entity schema="support" name="clientes" color="BED3F4" x="1328" y="224" />
+		<entity schema="support" name="det_pago_rep" color="C7F4BE" x="256" y="448" />
+		<entity schema="support" name="det_pago_servi" color="C7F4BE" x="480" y="224" />
+		<entity schema="support" name="ing_equipos" color="BED3F4" x="1120" y="224" />
+		<entity schema="support" name="marcas" color="BED3F4" x="1328" y="576" />
+		<entity schema="support" name="pago_rep" color="C7F4BE" x="64" y="224" />
+		<entity schema="support" name="pago_servicio" color="C7F4BE" x="256" y="224" />
+		<entity schema="support" name="raz_social" color="C7F4BE" x="48" y="448" />
+		<entity schema="support" name="repuestos" color="C7F4BE" x="480" y="448" />
+		<entity schema="support" name="servicios" color="C7F4BE" x="704" y="224" />
+		<entity schema="support" name="tipo_eq" color="BED3F4" x="1120" y="576" />
+		<entity schema="support" name="usuarios" color="BED3F4" x="928" y="576" />
+		<callout x="1120" y="80" pointer="Round" >
+			<comment><![CDATA[This is a layout. You can create multiple layouts with the same or different tables. 
+
+Edit tables by double-clicking the table headers.]]></comment>
+		</callout>
+		<group name="ing_equipos" color="ECF0F7" >
+			<entity schema="support" name="clientes" />
+			<entity schema="support" name="marcas" />
+			<entity schema="support" name="tipo_eq" />
+			<entity schema="support" name="usuarios" />
+			<entity schema="support" name="ing_equipos" />
+		</group>
+		<group name="pago_rep" color="EEF7EC" >
+			<entity schema="support" name="pago_rep" />
+			<entity schema="support" name="pago_servicio" />
+			<entity schema="support" name="det_pago_rep" />
+			<entity schema="support" name="raz_social" />
+			<entity schema="support" name="det_pago_servi" />
+			<entity schema="support" name="repuestos" />
+			<entity schema="support" name="servicios" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-17af" show_column_type="y" show_relation="columns" >
+		<entity schema="support" name="clientes" color="BED3F4" x="1680" y="48" />
+		<entity schema="support" name="det_pago_rep" color="C7F4BE" x="320" y="272" />
+		<entity schema="support" name="det_pago_servi" color="C7F4BE" x="560" y="48" />
+		<entity schema="support" name="ing_equipos" color="BED3F4" x="1424" y="48" />
+		<entity schema="support" name="marcas" color="BED3F4" x="1680" y="400" />
+		<entity schema="support" name="pago_rep" color="C7F4BE" x="48" y="48" />
+		<entity schema="support" name="pago_servicio" color="C7F4BE" x="320" y="48" />
+		<entity schema="support" name="raz_social" color="C7F4BE" x="48" y="272" />
+		<entity schema="support" name="repuestos" color="C7F4BE" x="576" y="272" />
+		<entity schema="support" name="servicios" color="C7F4BE" x="848" y="48" />
+		<entity schema="support" name="tipo_eq" color="BED3F4" x="1424" y="400" />
+		<entity schema="support" name="usuarios" color="BED3F4" x="1152" y="400" />
+		<script name="SQL Editor" id="Editor-12ae" language="SQL" >
+			<string><![CDATA[SELECT
+	id_ing, foto, `desc`, garantia, mod_eq, fec_ing, fec_sald, estado, estado_eq, id_cliente, id_usuario, id_marca, id_tipo_equipo
+FROM
+	support.ing_equipos s;]]></string>
+		</script>
+		<browser id="Browse-4aa" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="support" entity="ing_equipos" x="-2147483648" y="-2147483648" width="-2147483648" height="-2147483648" >
+				<browse_table schema="support" entity="pago_rep" fk="pago_rep_ibfk_2" x="40" y="-2147483648" width="500" height="350" >
+					<browse_table schema="support" entity="det_pago_rep" fk="det_pago_rep_ibfk_2" x="580" y="-2147483648" width="500" height="350" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-2d5" name="Query Builder" >
+			<query_table schema="support" name="ing_equipos" alias="ie" x="48" y="48" >
+				<column name="id_ing" />
+				<column name="foto" />
+				<column name="desc" />
+				<column name="garantia" />
+				<column name="mod_eq" />
+				<column name="fec_ing" />
+				<column name="fec_sald" />
+				<column name="estado" />
+				<column name="estado_eq" />
+				<column name="id_cliente" />
+				<column name="id_usuario" />
+				<column name="id_marca" />
+				<column name="id_tipo_equipo" />
+				<query_table schema="support" name="pago_rep" alias="pr" x="256" y="48" fk="pago_rep_ibfk_2" type="Inner Join" >
+					<column name="id_p_rep" />
+					<column name="fec_vent" />
+					<column name="total_mont" />
+					<column name="id_razon" />
+					<column name="id_ingreso" />
+					<query_table schema="support" name="det_pago_rep" alias="dpr" x="448" y="48" fk="det_pago_rep_ibfk_2" type="Inner Join" >
+						<column name="cant_rep" />
+						<column name="det_rep" />
+						<column name="id_repuesto" />
+						<column name="id_pago_repuesto" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-11e5" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Ing_equipos Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="id_ing" type="4" />
+						<var name="foto" type="-1" />
+						<var name="desc" type="-1" />
+						<var name="garantia" type="-1" />
+						<var name="mod_eq" type="-1" />
+						<var name="fec_ing" type="93" />
+						<var name="fec_sald" type="93" />
+						<var name="estado" type="-1" />
+						<var name="estado_eq" type="-1" />
+						<var name="id_cliente" type="4" />
+						<var name="id_usuario" type="4" />
+						<var name="id_marca" type="4" />
+						<var name="id_tipo_equipo" type="4" />
+						<script ><![CDATA[SELECT * FROM support.ing_equipos]]></script>
+					</form_script>
+					<param name="item" value="foto" />
+					<param name="width" value="100%" />
+					<param name="title" value="Sample Chart" />
+					<param name="value" value="id_ing" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2,-2,-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="id_ing" type="4" />
+						<var name="foto" type="-1" />
+						<var name="desc" type="-1" />
+						<var name="garantia" type="-1" />
+						<var name="mod_eq" type="-1" />
+						<var name="fec_ing" type="93" />
+						<var name="fec_sald" type="93" />
+						<var name="estado" type="-1" />
+						<var name="estado_eq" type="-1" />
+						<var name="id_cliente" type="4" />
+						<var name="id_usuario" type="4" />
+						<var name="id_marca" type="4" />
+						<var name="id_tipo_equipo" type="4" />
+						<script ><![CDATA[SELECT * FROM support.ing_equipos]]></script>
+					</form_script>
+					<cell type="label" name="id_ing" template="Plain" pos="0,0,0,0,c,c" />
+					<cell type="label" name="foto" template="Plain" pos="1,0,1,0,c,c" />
+					<cell type="label" name="desc" template="Plain" pos="2,0,2,0,c,c" />
+					<cell type="label" name="garantia" template="Plain" pos="3,0,3,0,c,c" />
+					<cell type="label" name="mod_eq" template="Plain" pos="4,0,4,0,c,c" />
+					<cell type="label" name="fec_ing" template="Plain" pos="5,0,5,0,c,c" />
+					<cell type="label" name="${id_ing}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${foto}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="label" name="${desc}" template="Plain" pos="2,1,2,1,l,c" />
+					<cell type="label" name="${garantia}" template="Plain" pos="3,1,3,1,l,c" />
+					<cell type="label" name="${mod_eq}" template="Plain" pos="4,1,4,1,l,c" />
+					<cell type="label" name="${fec_ing}" template="Plain" pos="5,1,5,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="6,1,6,1,c,c" ref_id="Report-11e5" />
+				</tableview>
+				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-11e5" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" template="Plain" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-11e5" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" template="Plain" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" template="Plain" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-11e5" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>

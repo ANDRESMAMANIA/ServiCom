@@ -1,0 +1,195 @@
+Reportes de clientes
+Reporte de clientes: Este reporte muestra la información básica de todos los clientes, como el nombre, la dirección, el número de teléfono y el correo electrónico.
+Reporte de clientes por estado: Este reporte muestra la cantidad de clientes por estado.
+Reporte de clientes por ciudad: Este reporte muestra la cantidad de clientes por ciudad.
+Reporte de clientes por tipo de cliente: Este reporte muestra la cantidad de clientes por tipo de cliente (individual, empresa, etc.).
+Reporte de clientes por fecha de registro: Este reporte muestra la cantidad de clientes registrados por fecha.
+Reporte de clientes con más equipos: Este reporte muestra los clientes que tienen más equipos registrados en tu sistema.
+Reporte de clientes con más servicios contratados: Este reporte muestra los clientes que han contratado más servicios en un determinado período de tiempo.
+Reporte de clientes con más ingresos: Este reporte muestra los clientes que han generado más ingresos en un determinado período de tiempo.
+
+Reportes de equipos
+Reporte de equipos: Este reporte muestra la información básica de todos los equipos, como el número de serie, el modelo, la marca y el estado.
+Reporte de equipos por tipo: Este reporte muestra la cantidad de equipos por tipo de equipo.
+Reporte de equipos por marca: Este reporte muestra la cantidad de equipos por marca.
+Reporte de equipos por estado: Este reporte muestra la cantidad de equipos por estado.
+Reporte de equipos por cliente: Este reporte muestra la cantidad de equipos por cliente.
+Reporte de equipos en reparación: Este reporte muestra los equipos que están actualmente en reparación.
+Reporte de equipos más utilizados: Este reporte muestra los equipos que han sido utilizados más en un determinado período de tiempo.
+Reporte de equipos más costosos: Este reporte muestra los equipos que tienen un valor más alto.
+
+Reportes de servicios
+Reporte de servicios: Este reporte muestra la información básica de todos los servicios, como el nombre, la descripción y el precio.
+Reporte de servicios por tipo: Este reporte muestra la cantidad de servicios por tipo de servicio.
+Reporte de servicios por marca: Este reporte muestra la cantidad de servicios por marca.
+Reporte de servicios por estado: Este reporte muestra la cantidad de servicios por estado.
+Reporte de servicios más contratados: Este reporte muestra los servicios que más han sido contratados en un determinado período de tiempo.
+Reporte de servicios más rentables: Este reporte muestra los servicios que han generado más ingresos en un determinado período de tiempo.
+
+Reportes de pagos
+Reporte de pagos: Este reporte muestra la información básica de todos los pagos, como la fecha, el monto y el método de pago.
+Reporte de pagos por cliente: Este reporte muestra los pagos realizados por cada cliente.
+Reporte de pagos por servicio: Este reporte muestra los pagos realizados por cada servicio.
+Reporte de pagos por fecha: Este reporte muestra los pagos realizados por fecha.
+Reporte de pagos pendientes: Este reporte muestra los pagos que aún no han sido realizados.
+Reporte de pagos atrasados: Este reporte muestra los pagos que están atrasados.
+
+Reportes combinados
+Reporte de clientes con equipos en reparación: Este reporte muestra los clientes que tienen equipos en reparación.
+Reporte de servicios contratados por clientes: Este reporte muestra los servicios que han sido contratados por cada cliente.
+Reporte de pagos por servicios: Este reporte muestra los pagos realizados por cada servicio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reportes de clientes
+
+Reporte de clientes
+Reporte de clientes por estado
+Reporte de clientes por ciudad
+Reporte de clientes por tipo de cliente
+Reporte de clientes por fecha de registro
+Reporte de clientes con más equipos
+Reporte de clientes con más servicios contratados
+Reporte de clientes con más ingresos
+Reportes de equipos
+
+Reporte de equipos
+Reporte de equipos por tipo
+Reporte de equipos por marca
+Reporte de equipos por estado
+Reporte de equipos por cliente
+Reporte de equipos en reparación
+Reporte de equipos más utilizados
+Reporte de equipos más costosos
+Reportes de servicios
+
+Reporte de servicios
+Reporte de servicios por tipo
+Reporte de servicios por marca
+Reporte de servicios por estado
+Reporte de servicios más contratados
+Reporte de servicios más rentables
+Reportes de pagos
+
+Reporte de pagos
+Reporte de pagos por cliente
+Reporte de pagos por servicio
+Reporte de pagos por fecha
+Reporte de pagos pendientes
+Reporte de pagos atrasados
+Reportes combinados
+
+Reporte de clientes con equipos en reparación
+Reporte de servicios contratados por clientes
+Reporte de pagos por servicios
+Reportes personales
+
+Reporte de rendimiento de los técnicos
+Reporte de rendimiento de los servicios
+Reporte de rendimiento financiero
+Reporte de tendencias de ventas
+Reporte de tendencias de reparaciones
+Reporte de tendencias de clientes
+Reporte de cumplimiento de las políticas
+Reporte de cumplimiento de las normas
+Reporte de cumplimiento de los contratos
+Reporte de análisis de mercado
+Reporte de análisis de productos
+Reporte de análisis de procesos
+En total, existen 39 reportes, divididos en las siguientes categorías:
+
+Reportes estándar: 27
+Reportes personales: 12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reportes de clientes
+
+Reporte	Concepto
+Reporte de clientes	Lista de todos los clientes, con su información básica, como nombre, dirección, número de teléfono y correo electrónico.
+Reporte de clientes por estado	Lista de todos los clientes, agrupados por estado.
+Reporte de clientes por ciudad	Lista de todos los clientes, agrupados por ciudad.
+Reporte de clientes por tipo de cliente	Lista de todos los clientes, agrupados por tipo de cliente (individual, empresa, etc.).
+Reporte de clientes por fecha de registro	Lista de todos los clientes, agrupados por fecha de registro.
+Reporte de clientes con más equipos	Lista de los clientes que tienen más equipos registrados en el sistema.
+Reporte de clientes con más servicios contratados	Lista de los clientes que han contratado más servicios en un determinado período de tiempo.
+Reporte de clientes con más ingresos	Lista de los clientes que han generado más ingresos en un determinado período de tiempo.
+
+Reportes de equipos
+
+Reporte	Concepto
+Reporte de equipos	Lista de todos los equipos, con su información básica, como número de serie, modelo, marca y estado.
+Reporte de equipos por tipo	Lista de todos los equipos, agrupados por tipo de equipo.
+Reporte de equipos por marca	Lista de todos los equipos, agrupados por marca.
+Reporte de equipos por estado	Lista de todos los equipos, agrupados por estado.
+Reporte de equipos por cliente	Lista de todos los equipos, agrupados por cliente.
+Reporte de equipos en reparación	Lista de los equipos que están actualmente en reparación.
+Reporte de equipos más utilizados	Lista de los equipos que han sido utilizados más en un determinado período de tiempo.
+Reporte de equipos más costosos	Lista de los equipos que tienen un valor más alto.
+
+Reportes de servicios
+
+Reporte	Concepto
+Reporte de servicios	Lista de todos los servicios, con su información básica, como nombre, descripción y precio.
+Reporte de servicios por tipo	Lista de todos los servicios, agrupados por tipo de servicio.
+Reporte de servicios por marca	Lista de todos los servicios, agrupados por marca.
+Reporte de servicios por estado	Lista de todos los servicios, agrupados por estado.
+Reporte de servicios más contratados	Lista de los servicios que más han sido contratados en un determinado período de tiempo.
+Reporte de servicios más rentables	Lista de los servicios que han generado más ingresos en un determinado período de tiempo.
+
+Reportes de pagos
+
+Reporte	Concepto
+Reporte de pagos	Lista de todos los pagos, con su información básica, como fecha, monto y método de pago.
+Reporte de pagos por cliente	Lista de todos los pagos realizados por cada cliente.
+Reporte de pagos por servicio	Lista de todos los pagos realizados por cada servicio.
+Reporte de pagos por fecha	Lista de todos los pagos realizados por fecha.
+Reporte de pagos pendientes	Lista de los pagos que aún no han sido realizados.
+Reporte de pagos atrasados	Lista de los pagos que están atrasados.
+
+Reportes combinados
+
+Reporte	Concepto
+Reporte de clientes con equipos en reparación	Lista de los clientes que tienen equipos en reparación.
+Reporte de servicios contratados por clientes	Lista de los servicios que han sido contratados por cada cliente.
+Reporte de pagos por servicios	Lista de todos los pagos realizados por cada servicio.
+
+Reportes personales
+
+Reporte	Concepto
+Reporte de rendimiento de los técnicos	Muestra el rendimiento de los técnicos, como el número de equipos reparados, el tiempo medio de reparación y el costo de las reparaciones.
+Reporte de rendimiento de los servicios	Muestra el rendimiento de los servicios, como el número de servicios contratados, el costo de los servicios y la satisfacción de los clientes.
+Reporte de rendimiento financiero	Muestra el rendimiento financiero del negocio, como los ingresos, los gastos y el beneficio neto.
+Reporte de tendencias de ventas	Muestra las tendencias de ventas, como el crecimiento de las ventas, los productos más vendidos y los canales de ventas más rentables.
+Reporte de tendencias de reparaciones	Muestra las tendencias de reparaciones, como los tipos de equipos más reparados, las causas más comunes de las reparaciones y los costos de las reparaciones.

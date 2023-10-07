@@ -1,0 +1,70 @@
+/* En banderas.css */
+.nacionalidad-option {
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    padding-left: 20px;
+}
+
+.bolivia {
+    background-image: url('vistas/img/banderas/bolivia.png');
+}
+
+.mexico {
+    background-image: url('vistas/img/banderas/mexico.png');
+}
+
+.estados-unidos {
+    background-image: url('vistas/img/banderas/estados-unidos.png');
+}
+
+.espana {
+    background-image: url('vistas/img/banderas/espana.png');
+}
+
+.reino-unido {
+    background-image: url('vistas/img/banderas/reino-unido.png');
+}
+
+.alemania {
+    background-image: url('vistas/img/banderas/alemania.png');
+}
+
+.argentina {
+    background-image: url('vistas/img/banderas/argentina.png');
+}
+
+.chile {
+    background-image: url('vistas/img/banderas/chile.png');
+}
+
+.colombia {
+    background-image: url('vistas/img/banderas/colombia.png');
+}
+
+.venezuela {
+    background-image: url('vistas/img/banderas/venezuela.png');
+}
+
+.guatemala {
+    background-image: url('vistas/img/banderas/guatemala.png');
+}
+
+.el-salvador {
+    background-image: url('vistas/img/banderas/el-salvador.png');
+}
+
+.honduras {
+    background-image: url('vistas/img/banderas/honduras.png');
+}
+
+.nicaragua {
+    background-image: url('vistas/img/banderas/nicaragua.png');
+}
+
+.costa-rica {
+    background-image: url('vistas/img/banderas/costa-rica.png');
+}
+
+.panama {
+    background-image: url('vistas/img/banderas/panama.png');
+}
